@@ -13,7 +13,7 @@ chart_studio.tools.set_credentials_file(
        api_key = '••••••••••')
 import plotly.graph_objs as go
 
-df = pd.read_csv('/Users/Wayne/Documents/Wayne python work/gene_clone.csv')
+df = pd.read_csv('gene_clone.csv')
 lst_variable = df.columns.tolist()
 lst_variable.remove('correct_num')
 str_formula = 'correct_num ~ ' + ' + '.join(lst_variable)
