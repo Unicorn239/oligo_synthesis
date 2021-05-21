@@ -6,7 +6,6 @@ import jupyter_plotly_dash as JupyterDash
 import pandas as pd
 import numpy as np
 import statsmodels.formula.api as smf
-import re
 import chart_studio
 chart_studio.tools.set_credentials_file(
        username = 'unicorn239',
