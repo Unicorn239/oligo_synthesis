@@ -1,3 +1,4 @@
+import os
 import dash
 from dash.dependencies import Input, Output 
 import dash_core_components as dcc
@@ -6,10 +7,6 @@ import jupyter_plotly_dash as JupyterDash
 import pandas as pd
 import numpy as np
 import statsmodels.formula.api as smf
-import chart_studio
-chart_studio.tools.set_credentials_file(
-       username = 'unicorn239',
-       api_key = '••••••••••')
 import plotly.graph_objs as go
 
 df = pd.read_csv('gene_clone.csv')
@@ -22,7 +19,9 @@ results = model.fit()
     
     
 # dash app
-app = dash.Dash()
+app = dash.Dash(__name__)
+server = app.server
+port = int(os.environ.get("PORT", 5000))
 
 app.layout = html.Div(
                   children = [    # This container is to host control components
@@ -98,7 +97,9 @@ def update_graph(length_value, clone_value, n_clicks):
 
     
 if __name__ == '__main__':
-    app.run_server(debug = False)
+    oligo.run_server(debug = False, 
+                   host="0.0.0.0",
+                   port=port)
 
 
 
