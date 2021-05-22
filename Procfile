@@ -1,1 +1,1 @@
-web: gunicorn kinetics:server
+web: gunicorn oligosyn:server
