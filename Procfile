@@ -1,1 +1,1 @@
-web: gunicorn oligosyn:server
+web: gunicorn oligo:server
