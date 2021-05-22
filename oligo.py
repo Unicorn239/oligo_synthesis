@@ -3,7 +3,6 @@ import dash
 from dash.dependencies import Input, Output 
 import dash_core_components as dcc
 import dash_html_components as html
-import jupyter_plotly_dash as JupyterDash
 import pandas as pd
 import numpy as np
 import statsmodels.formula.api as smf
